@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authentication</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="assets/logo.png"
+            alt=""
+            width="24"
+            height="24"
+            class="d-inline-block align-text-top"
+          />
+          Authentication
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"  onclick="goToHome()">Home</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="goTosignUp()" id="sign-up-nav-link"> Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="goTosignIn()" id="sign-in-nav-link">Sign In</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="profile-nav-link"> Hi, Mohan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="signOut()" id="sign-out-nav-link">Sign Out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container text-center">
+        <div id="home">
+      <h1 class="display-4  mt-2 mb-4">Authentication</h1>
+      <p class="lead">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, ducimus
+        perferendis harum iusto facere corporis recusandae nostrum? Dolor
+        quidem, quos mollitia sed dolorem deleniti obcaecati blanditiis deserunt
+        in eaque neque ea veritatis ad, dolore enim. Ullam tempore, aspernatur,
+        veniam obcaecati quo esse, laboriosam veritatis culpa dolore repudiandae
+        possimus. Sint, non!
+      </p>
+
+      <div class="description">
+        <img src="assets/logo.png" alt="Image" height="300" width="300">
+        <p class="lead">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut aperiam
+          id asperiores laboriosam dolore ab possimus quibusdam labore,
+          voluptatem omnis aliquam nostrum accusantium corrupti! Saepe quo
+          beatae enim cumque eius facilis soluta debitis perspiciatis eos totam
+          error recusandae nemo asperiores dolorem in perferendis, tempore quos
+          excepturi iste hic sit vel amet doloremque. Eius quo sint optio.
+          Praesentium culpa consequuntur accusantium sequi ea molestias tempore
+          odio voluptatum eaque, ducimus ad temporibus quidem doloremque
+          blanditiis aut omnis similique rerum corporis enim veniam distinctio
+          quis repudiandae alias minima? Voluptatibus harum corrupti ullam hic
+          aspernatur totam, aliquid tenetur beatae delectus eos, dolorum
+          inventore laboriosam.
+        </p>
+      </div>
+
+      <p class="lead mt-4">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis, fugiat
+        minima necessitatibus aperiam quibusdam laboriosam? Aut iure id, quis
+        tenetur ex expedita repudiandae at debitis cupiditate quam tempore
+        dolorem deleniti sint. At ipsam reprehenderit debitis, iusto, architecto
+        odit ipsa quod error recusandae hic unde! Alias optio laboriosam eveniet
+        quod molestias, autem veritatis nulla amet non harum excepturi
+        voluptatibus aperiam beatae? Consequatur ipsam ut, temporibus nemo vel
+        cum quisquam quis error autem deleniti quod earum reprehenderit corporis
+        facilis at ducimus doloribus!
+      </p>
+    </div>
+       <div id="sign-up">
+        <form class="row g-3" id="sign-up-form">
+            <h1 class="display-4 form-title">Sign Up</h1>
+            <div class="col-md-6">
+              <label for="first-name" class="form-label">First name</label>
+              <input type="text" class="form-control" id="first-name"  required autocomplete="off">
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="last-name" class="form-label">Last name</label>
+              <input type="text" class="form-control" id="last-name"  required autocomplete="off">
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="email" class="form-label">Email</label>
+              <div class="input-group has-validation">
+                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                <input type="text" class="form-control" id="email" aria-describedby="inputGroupPrepend" required autocomplete="off">
+                <div class="invalid-feedback">
+                  Please choose a username.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+                <label for="phone-number" class="form-label">Phone Number</label>
+                <div class="input-group has-validation">
+                  <span class="input-group-text" id="inputGroupPrepend">+91</span>
+                  <input type="text" class="form-control" id="phone-number" aria-describedby="inputGroupPrepend" required autocomplete="off">
+                  <div class="invalid-feedback">
+                    Please choose a username.
+                  </div>
+                </div>
+              </div>
+            <div class="col-md-6">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" required autocomplete="off">
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="confirm-password" class="form-label">Confirm Paasword</label>
+                <input type="password" class="form-control" id="confirm-password" required autocomplete="off">
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+            </div>
+            <div class="col-12">
+              <div class="form-check" style="text-align: left">
+                <input class="form-check-input" type="checkbox" id="t-and-c" required>
+                <label class="form-check-label" for="t-and-c">
+                  Agree to terms and conditions
+                </label>
+                <div class="invalid-feedback">
+                  You must agree before submitting.
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary" type="button" onclick="signUp()">Sign Up</button>
+            </div>
+          </form>
+       </div>
+
+       <div id="sign-in">
+        <form class="row g-3" id="sign-in-form">
+          <h1 class="display-4 form-title">Sign In</h1>
+          <div class="col-md-12">
+            <label for="login-email" class="form-label">Email</label>
+            <div class="input-group has-validation">
+              <span class="input-group-text" id="inputGroupPrepend">@</span>
+              <input type="text" class="form-control" id="login-email" aria-describedby="inputGroupPrepend" required autocomplete="off">
+              <div class="invalid-feedback">
+                Please choose a username.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+              <label for="login-password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="login-password" required autocomplete="off">
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary" type="button" onclick="signIn()"> Sign In</button>
+          </div>
+        </form>
+     </div>
+       </div>
+</div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!-- Encryption -
+     Decryption
+    
+    -->
